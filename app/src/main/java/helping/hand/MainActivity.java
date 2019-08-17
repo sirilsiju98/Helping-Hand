@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         View decorView=getWindow().getDecorView();
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
         getSupportActionBar().hide();
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -23,6 +24,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        },4000);
+        },2000);
     }
 }
