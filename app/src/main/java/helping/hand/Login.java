@@ -66,7 +66,7 @@ public class Login extends AppCompatActivity {
                     public void done(ParseUser user, ParseException e) {
                         if(user!=null) {
                             Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                            logbar.setVisibility(View.INVISIBLE);
+
                             if(who=='v')
                             {
                                 Intent intent = new Intent(Login.this,Volunteer.class);
@@ -86,6 +86,7 @@ public class Login extends AppCompatActivity {
                             loginb.setEnabled(true);
                             Toast.makeText(Login.this,"Invalid username/password",Toast.LENGTH_SHORT).show();
                         }
+                        logbar.setVisibility(View.INVISIBLE);
                     }
 
                 });
