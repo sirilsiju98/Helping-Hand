@@ -2,12 +2,17 @@ package helping.hand;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.parse.ParseException;
+import com.parse.ParseUser;
+import com.parse.SignUpCallback;
 
 public class CreateAC extends AppCompatActivity {
     EditText name,email,address,mob,pass,rpass,camp;
@@ -82,7 +87,40 @@ public class CreateAC extends AppCompatActivity {
     {
         if(!checkError())
         {
-            Toast.makeText(this, "No Error", Toast.LENGTH_SHORT).show();
+            ParseUser user = new ParseUser();
+            user.setUsername(email.getText().toString());
+            user.setPassword(pass.getText().toString());
+            user.setEmail(email.getText().toString());
+            user.put("name",name.getText().toString());
+            user.put("mobile",mob.getText().toString());
+            user.put("Address",address.getText().toString());
+            if(camp.getText().toString().isEmpty())
+                user.put("Camp","Nil");
+            else
+                user.put("Camp",camp.getText().toString());
+            user.signUpInBackground(new SignUpCallback() {
+                @Override
+                public void done(ParseException e) {
+                    if(e!=null)
+                        Toast.makeText(CreateAC.this, e.toString(), Toast.LENGTH_SHORT).show();
+                    else
+                    {
+                        if(Login.who=='v')
+                        {
+                            Intent intent = new Intent(CreateAC.this,Volunteer.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                        else
+                        {
+                            Intent intent = new Intent(CreateAC.this,People.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                }
+            });
+
         }
     }
     @Override

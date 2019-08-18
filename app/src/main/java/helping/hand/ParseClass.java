@@ -21,15 +21,7 @@ public class ParseClass extends Application {
                 .build()
         );
 
-        ParseObject object = new ParseObject("Hello");
-        object.put("eg","1");
-        object.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(ParseException e) {
-                if(e!=null)
-                Toast.makeText(ParseClass.this, e.toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
+
 
     }
 }

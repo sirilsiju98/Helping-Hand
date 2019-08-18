@@ -8,9 +8,7 @@
 
     <dist:module dist:instant="true" />
 
-
-
-<application
+    <application
         android:name=".ParseClass"
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -18,10 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".CreateAC"></activity>
+        <activity android:name=".People"></activity>
+        <activity android:name=".Volunteer" />
+        <activity android:name=".CreateAC" />
         <activity android:name=".Login" />
-
 
         <meta-data
             android:name="com.google.android.actions"
