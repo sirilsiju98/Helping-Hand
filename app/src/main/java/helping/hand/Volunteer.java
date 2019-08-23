@@ -45,6 +45,10 @@ public class Volunteer extends AppCompatActivity {
                 Intent intent = new Intent(Volunteer.this,SelectActivity.class);
                 startActivity(intent);
                 finish();
+                break;
+            case R.id.notif:
+                Intent intent2 = new Intent(Volunteer.this,Notif.class);
+                startActivity(intent2);
         }
         return super.onOptionsItemSelected(item);
     }

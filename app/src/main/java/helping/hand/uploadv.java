@@ -56,6 +56,7 @@ public class uploadv extends AppCompatActivity {
        else {
            EditText loc = (EditText)findViewById(R.id.editTextl);
            if(loc.getText().toString().isEmpty())
+
                loc.setError("This field cannot be empty");
            else {
                final ProgressDialog dialog = ProgressDialog.show(uploadv.this, "",

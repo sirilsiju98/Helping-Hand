@@ -18,7 +18,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".requets"></activity>
         <activity android:name=".RequestItem" />
-        <activity android:name=".Avilable" />
+        <activity android:name=".Notif" />
         <activity android:name=".uploadv" />
         <activity android:name=".Items" />
         <activity android:name=".People" />
