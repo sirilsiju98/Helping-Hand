@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.parse.ParseUser;
 
@@ -39,5 +40,20 @@ public class People extends AppCompatActivity {
                 finish();
         }
         return super.onOptionsItemSelected(item);
+
+
+    }
+
+
+    public void vi(View view)
+    {
+       Intent intent = new Intent(People.this,Items.class);
+       startActivity(intent);
+    }
+
+    public void rq(View view)
+    {
+        Intent intent = new Intent(People.this,RequestItem.class);
+        startActivity(intent);
     }
 }

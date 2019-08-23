@@ -27,7 +27,7 @@ public class SelectActivity extends AppCompatActivity {
             Intent login = new Intent(this, People.class);
             startActivity(login);
         }
-        finish();
+
     }
     public void volunter(View view)
     {
@@ -41,7 +41,7 @@ public class SelectActivity extends AppCompatActivity {
             Intent login = new Intent(this, Volunteer.class);
             startActivity(login);
         }
-        finish();
+
 
     }
 }

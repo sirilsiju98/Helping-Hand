@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.parse.ParseUser;
 
@@ -24,7 +25,17 @@ public class Volunteer extends AppCompatActivity {
         menuInflater.inflate(R.menu.volunteer_menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
+    public void show(View view)
+    {
+        Intent intent =new Intent(Volunteer.this,requets.class);
+        startActivity(intent);
 
+    }
+    public void up(View view)
+    {
+        Intent intent =new Intent(Volunteer.this,uploadv.class);
+        startActivity(intent);
+    }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId())
