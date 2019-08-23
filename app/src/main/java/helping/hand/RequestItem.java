@@ -100,7 +100,7 @@ public class RequestItem extends AppCompatActivity {
                             dialog.dismiss();
                         }
                         else {
-                            Intent intent = new Intent(RequestItem.this, Volunteer.class);
+                            Intent intent = new Intent(RequestItem.this, People.class);
                             startActivity(intent);
                             finish();
                         }
