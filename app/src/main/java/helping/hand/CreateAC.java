@@ -129,6 +129,10 @@ public class CreateAC extends AppCompatActivity {
         setContentView(R.layout.activity_create_ac);
         setTitle("Create an Account");
         initialize();
+        if(Login.who=='v')
+        {
+            camp.setEnabled(false);
+        }
 
     }
 }

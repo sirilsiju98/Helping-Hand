@@ -2,6 +2,7 @@ package helping.hand;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -22,7 +23,8 @@ public class requets extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_requets);
         setTitle("Items requested");
-
+        final ProgressDialog dialog = ProgressDialog.show(requets.this, "",
+                "Loading. Please wait...", true);
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Requests");
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -47,6 +49,7 @@ public class requets extends AppCompatActivity {
                         }
                         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(requets.this, android.R.layout.simple_list_item_1, list);
                         listView.setAdapter(arrayAdapter);
+                        dialog.dismiss();
                     }
                 }
             }

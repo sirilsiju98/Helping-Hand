@@ -2,6 +2,7 @@ package helping.hand;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ArrayAdapter;
@@ -22,6 +23,7 @@ public class Notif extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avilable);
+        setTitle("Notifications");
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Requests");
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
@@ -48,7 +50,7 @@ public class Notif extends AppCompatActivity {
             }
         });
 
-        
+
 
     }
 }

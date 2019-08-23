@@ -62,6 +62,8 @@ public class Items extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_items);
         setTitle("Tap to Contact");
+        final ProgressDialog dialog = ProgressDialog.show(Items.this, "",
+                "Loading. Please wait...", true);
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Items_Available");
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -90,6 +92,7 @@ public class Items extends AppCompatActivity {
                         }
                         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(Items.this,android.R.layout.simple_list_item_1,list);
                         listView.setAdapter(arrayAdapter);
+                        dialog.dismiss();
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -118,6 +121,7 @@ public class Items extends AppCompatActivity {
                 }
             }
         });
+
     }
 }
 
