@@ -26,6 +26,8 @@ public class RequestItem extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request_item);
         setTitle("Enter items you need");
+        initialize();
+        setAdapters();
         if(ParseUser.getCurrentUser().get("Camp").toString().isEmpty())
         {
             loc.setEnabled(true);
@@ -68,6 +70,7 @@ public class RequestItem extends AppCompatActivity {
 
         for(int i=0;i<4;i++)
             sp[i].setAdapter(arrayAdapterQty);
+
     }
     public void request(View view)
     {
